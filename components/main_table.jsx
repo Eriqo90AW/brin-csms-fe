@@ -43,35 +43,39 @@ import {
 const data = [
   {
     id: "m5gr84i9",
-    name: "Ken",
+    name: "CS Rektorat",
     consumption: 316,
     cost: 316000,
-    last_heartbeat: "2021-09-01 00:00:00",
-    status: "running",
+    last_heartbeat: "2023-09-01 00:00:00",
+    status: "Connected",
+    activity: "Charging",
   },
   {
     id: "x8hn72k3",
-    name: "Alice",
+    name: "CS FT",
     consumption: 275,
     cost: 275000,
-    last_heartbeat: "2021-09-02 01:15:30",
-    status: "running",
+    last_heartbeat: "2023-09-02 01:15:30",
+    status: "Disconnected",
+    activity: "Preparing",
   },
   {
     id: "p4ls36t2",
     name: "Bob",
     consumption: 420,
     cost: 420000,
-    last_heartbeat: "2021-09-03 02:30:45",
-    status: "running",
+    last_heartbeat: "2023-09-03 02:30:45",
+    status: "Connected",
+    activity: "Available",
   },
   {
     id: "y2op98u1",
     name: "Catherine",
     consumption: 200,
     cost: 200000,
-    last_heartbeat: "2021-09-04 03:45:15",
-    status: "running",
+    last_heartbeat: "2023-09-04 03:45:15",
+    status: "Connected",
+    activity: "Unavailable",
   },
   {
     id: "q9we45r8",
@@ -80,6 +84,7 @@ const data = [
     cost: 150000,
     last_heartbeat: "2021-09-05 05:00:30",
     status: "running",
+    activity: "Error",
   },
   {
     id: "z6xc12v7",
@@ -181,24 +186,24 @@ export const columns = [
     header: () => <div className="text-[#1D2433]">Name</div>,
     cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
-  {
-    accessorKey: "consumption",
-    header: () => <div className="text-[#1D2433]">Consumption</div>,
-    cell: ({ row }) => <div>{row.getValue("consumption") + " kWh"}</div>,
-  },
-  {
-    accessorKey: "cost",
-    header: () => <div className="text-[#1D2433]">Cost</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("cost"));
-      const formatted = new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        minimumFractionDigits: 0,
-      }).format(amount);
-      return <div className="capitalize">{formatted}</div>;
-    },
-  },
+//   {
+//     accessorKey: "consumption",
+//     header: () => <div className="text-[#1D2433]">Consumption</div>,
+//     cell: ({ row }) => <div>{row.getValue("consumption") + " kWh"}</div>,
+//   },
+//   {
+//     accessorKey: "cost",
+//     header: () => <div className="text-[#1D2433]">Cost</div>,
+//     cell: ({ row }) => {
+//       const amount = parseFloat(row.getValue("cost"));
+//       const formatted = new Intl.NumberFormat("id-ID", {
+//         style: "currency",
+//         currency: "IDR",
+//         minimumFractionDigits: 0,
+//       }).format(amount);
+//       return <div className="capitalize">{formatted}</div>;
+//     },
+//   },
   {
     accessorKey: "last_heartbeat",
     header: () => <div className="text-[#1D2433]">Last Heartbeat</div>,
@@ -211,6 +216,13 @@ export const columns = [
     header: () => <div className="text-[#1D2433]">Status</div>,
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("status")}</div>
+    ),
+  },
+  {
+    accessorKey: "activity",
+    header: () => <div className="text-[#1D2433]">Activity</div>,
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("activity")}</div>
     ),
   },
   //   {

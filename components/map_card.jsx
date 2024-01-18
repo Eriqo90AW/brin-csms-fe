@@ -62,13 +62,16 @@ export default function map_card() {
               <Marker position={center} onClick={handleMarkerClick}>
                 <CustomMarker />
               </Marker>
+              <Marker position={{ lat: -6.36132, lng: 106.82406 }} onClick={handleMarkerClick}>
+                <CustomMarker />
+              </Marker>
               {showInfoWindow && (
                 <InfoWindow
                   position={center}
                   onCloseClick={handleInfoWindowClose}
                 >
                   <div>
-                    <h3 className="font-bold">CSMS Rektorat</h3>
+                    <h3 className="font-bold">CS Rektorat</h3>
                     <p>Berada didepan PAUI...</p>
                     <p>Total Charges: 10</p>
                   </div>
