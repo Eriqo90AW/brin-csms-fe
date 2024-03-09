@@ -39,7 +39,7 @@ export default function navbar() {
             <Link href="/activity" className="text-[#C6CDD5] font-light cursor-pointer hover:text-white">
               Activity
             </Link>
-            <Link href="/report" className="text-[#C6CDD5] font-light cursor-pointer hover:text-white">
+            {/* <Link href="/report" className="text-[#C6CDD5] font-light cursor-pointer hover:text-white">
               Report
             </Link>
             <Link href="/pv-production" className="text-[#C6CDD5] font-light cursor-pointer hover:text-white">
@@ -50,7 +50,7 @@ export default function navbar() {
             </Link>
             <Link href="/settings" className="text-[#C6CDD5] font-light cursor-pointer hover:text-white">
               Settings
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div id="search" className="h-full w-[25%]">

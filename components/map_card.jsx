@@ -49,8 +49,8 @@ export default function map_card() {
       <h1 className="text-[#576974] text-xl font-semibold ml-10 pt-5 pb-3">
         Charging Stations Data
       </h1>
-      <div className="h-[21rem] mx-10 flex gap-6">
-        <div className="h-full w-[32.5%] pb-7">
+      <div className="h-full mx-10 ">
+        <div className="h-[21rem] pb-7">
           {!isLoaded ? (
             <Skeleton className="h-full w-full" />
           ) : (
@@ -80,7 +80,7 @@ export default function map_card() {
             </GoogleMap>
           )}
         </div>
-        <div className="w-[67.5%]">
+        <div>
           <MainTable />
         </div>
       </div>
